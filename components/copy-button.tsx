@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { Copy, Check } from "lucide-react"
+import { Check, Copy } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
+import { useState } from "react"
 
 export function CopyButton({ text }: any) {
   const [isCopied, setIsCopied] = useState(false)
@@ -16,7 +16,7 @@ export function CopyButton({ text }: any) {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center justify-center cursor-pointer"
+      className="flex cursor-pointer items-center justify-center"
       aria-label="Copy to clipboard"
     >
       <AnimatePresence mode="popLayout" initial={false}>
@@ -27,11 +27,7 @@ export function CopyButton({ text }: any) {
           exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
           transition={{ type: "spring", duration: 0.3, bounce: 0 }}
         >
-          {isCopied ? (
-            <Check className="size-3.5" />
-          ) : (
-            <Copy className="size-3.5" />
-          )}
+          {isCopied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
         </motion.div>
       </AnimatePresence>
     </button>

@@ -1,6 +1,6 @@
+import { cn } from "@/lib/utils"
 import { cacheLife } from "next/cache"
 import { codeToHtml } from "shiki"
-import { cn } from "@/lib/utils"
 import { CopyButton } from "./copy-button"
 
 async function highlightCode(code: any, language: any) {

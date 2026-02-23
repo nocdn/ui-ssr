@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
@@ -54,6 +55,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} bg-background`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )

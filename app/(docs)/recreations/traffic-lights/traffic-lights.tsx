@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { AnimatePresence, motion, MotionConfig } from "motion/react"
 import { Triangle } from "lucide-react"
+import { AnimatePresence, motion, MotionConfig } from "motion/react"
+import { useState } from "react"
 
 export function TrafficLights() {
   const [expanded, setExpanded] = useState(false)
@@ -11,12 +11,12 @@ export function TrafficLights() {
     <div
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
-      className="w-fit flex gap-1 bg-white shadow-sm p-2 rounded-full"
+      className="flex w-fit gap-1 rounded-full bg-white p-2 shadow-sm"
     >
       <MotionConfig transition={{ duration: 0.4, type: "spring" }}>
         <motion.div
           layout
-          className="rounded-full flex items-start"
+          className="flex items-start rounded-full"
           whileTap={{ scale: 0.9 }}
           animate={{
             backgroundColor: expanded ? "#FF0C19" : "#E07365",
@@ -31,17 +31,17 @@ export function TrafficLights() {
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1.5 }}
                 exit={{ opacity: 0, scale: 0.7 }}
-                className="w-full h-full grid place-content-center relative"
+                className="relative grid h-full w-full place-content-center"
               >
                 <motion.div
                   transition={{ duration: 0.9, type: "spring", bounce: 0.35 }}
                   animate={{ width: expanded ? "8px" : "2px" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#66040A] h-[1.35px] rounded-full rotate-45"
+                  className="absolute top-1/2 left-1/2 h-[1.35px] -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-[#66040A]"
                 />
                 <motion.div
                   transition={{ duration: 0.9, type: "spring", bounce: 0.35 }}
                   animate={{ width: expanded ? "8px" : "2px" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#66040A] h-[1.35px] rounded-full rotate-135"
+                  className="absolute top-1/2 left-1/2 h-[1.35px] -translate-x-1/2 -translate-y-1/2 rotate-135 rounded-full bg-[#66040A]"
                 />
               </motion.div>
             )}
@@ -64,12 +64,12 @@ export function TrafficLights() {
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1.5 }}
                 exit={{ opacity: 0, scale: 0.7 }}
-                className="w-full h-full grid place-content-center"
+                className="grid h-full w-full place-content-center"
               >
                 <motion.div
                   transition={{ duration: 0.9, type: "spring", bounce: 0.35 }}
                   animate={{ width: expanded ? "8px" : "2px" }}
-                  className="bg-[#655000] h-[1.35px] rounded-full"
+                  className="h-[1.35px] rounded-full bg-[#655000]"
                 />
               </motion.div>
             )}
@@ -77,7 +77,7 @@ export function TrafficLights() {
         </motion.div>
         <motion.div
           layout
-          className="rounded-full flex items-center justify-center"
+          className="flex items-center justify-center rounded-full"
           whileTap={{ scale: 0.9 }}
           animate={{
             backgroundColor: expanded ? "#00CA47" : "#79C360",
@@ -92,7 +92,7 @@ export function TrafficLights() {
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1.5 }}
                 exit={{ opacity: 0, scale: 0.7 }}
-                className="flex flex-col items-center justify-center -rotate-45 -space-y-[1.2px]"
+                className="flex -rotate-45 flex-col items-center justify-center -space-y-[1.2px]"
               >
                 <motion.div
                   transition={{ duration: 0.9, type: "spring", bounce: 0.35 }}
@@ -104,12 +104,7 @@ export function TrafficLights() {
                   }}
                   className="flex items-center justify-center"
                 >
-                  <Triangle
-                    stroke="#02812E"
-                    size={7}
-                    fill="#02812E"
-                    className="block scale-y-70"
-                  />
+                  <Triangle stroke="#02812E" size={7} fill="#02812E" className="block scale-y-70" />
                 </motion.div>
                 <motion.div
                   transition={{ duration: 0.9, type: "spring", bounce: 0.35 }}
@@ -119,14 +114,9 @@ export function TrafficLights() {
                     scale: 1,
                     translateY: 0,
                   }}
-                  className="flex items-center justify-center rotate-180"
+                  className="flex rotate-180 items-center justify-center"
                 >
-                  <Triangle
-                    stroke="#02812E"
-                    size={7}
-                    fill="#02812E"
-                    className="block scale-y-70"
-                  />
+                  <Triangle stroke="#02812E" size={7} fill="#02812E" className="block scale-y-70" />
                 </motion.div>
               </motion.div>
             )}

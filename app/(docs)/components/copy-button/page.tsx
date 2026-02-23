@@ -1,6 +1,6 @@
 import { ComponentLayout } from "@/components/component-layout"
 import { AnimatedButton } from "@/registry/default/ui/animated-button/animated-button"
-import { Copy, Check, Link2, Unlink2, MoveRight } from "lucide-react"
+import { Check, Copy, Link2, MoveRight, Unlink2 } from "lucide-react"
 
 export const metadata = { title: "Copy Button" }
 
@@ -31,8 +31,8 @@ import { Copy, Check } from 'lucide-react'
       previewChildren={
         <div className="flex flex-col gap-4 text-[14px]">
           <div className="flex items-center gap-4 font-sans font-[430]">
-            <span className="opacity-30 -translate-y-[1px]">Copy Animation</span>
-            <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
+            <span className="-translate-y-[1px] opacity-30">Copy Animation</span>
+            <MoveRight strokeWidth={1.25} className="mr-0.25 opacity-20" />
             <AnimatedButton
               className="size-4.5 cursor-pointer"
               secondaryChildren={<Check />}
@@ -42,8 +42,8 @@ import { Copy, Check } from 'lucide-react'
             </AnimatedButton>
           </div>
           <div className="flex items-center gap-4 font-sans font-[430]">
-            <span className="opacity-30 -translate-y-[1px]">Link animation</span>
-            <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
+            <span className="-translate-y-[1px] opacity-30">Link animation</span>
+            <MoveRight strokeWidth={1.25} className="mr-0.25 opacity-20" />
             <AnimatedButton
               className="size-4.5 cursor-pointer"
               secondaryChildren={<Unlink2 />}

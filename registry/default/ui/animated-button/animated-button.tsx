@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, cloneElement, isValidElement } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { AnimatePresence, motion } from "motion/react"
+import { cloneElement, isValidElement, useState } from "react"
 
 export function AnimatedButton({
   children,
@@ -11,42 +11,39 @@ export function AnimatedButton({
   onClick,
   ariaLabel,
 }: {
-  children: React.ReactNode;
-  secondaryChildren?: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  ariaLabel: string;
+  children: React.ReactNode
+  secondaryChildren?: React.ReactNode
+  className?: string
+  onClick?: () => void
+  ariaLabel: string
 }) {
-  const [isShowingSecondary, setIsShowingSecondary] = useState(false);
+  const [isShowingSecondary, setIsShowingSecondary] = useState(false)
 
   const clonedChildren = isValidElement(children)
     ? cloneElement(children, {
         className: cn(className, (children.props as any).className),
       } as any)
-    : children;
+    : children
 
   const clonedSecondaryChildren =
     secondaryChildren && isValidElement(secondaryChildren)
       ? cloneElement(secondaryChildren, {
           className: cn(className, (secondaryChildren.props as any).className),
         } as any)
-      : secondaryChildren;
+      : secondaryChildren
 
   return (
     <motion.button
       tabIndex={0}
       aria-label={ariaLabel}
-      className={cn(
-        "group flex shrink-0 cursor-pointer items-center justify-center",
-        className
-      )}
+      className={cn("group flex shrink-0 cursor-pointer items-center justify-center", className)}
       onClick={() => {
         if (!isShowingSecondary) {
-          setIsShowingSecondary(!isShowingSecondary);
-          onClick?.();
+          setIsShowingSecondary(!isShowingSecondary)
+          onClick?.()
           setTimeout(() => {
-            setIsShowingSecondary(false);
-          }, 1000);
+            setIsShowingSecondary(false)
+          }, 1000)
         }
       }}
     >
@@ -72,5 +69,5 @@ export function AnimatedButton({
         )}
       </AnimatePresence>
     </motion.button>
-  );
+  )
 }
