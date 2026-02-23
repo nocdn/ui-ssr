@@ -1,6 +1,6 @@
 import { ComponentLayout } from "@/components/component-layout"
 import { AnimatedButton } from "@/registry/default/ui/animated-button/animated-button"
-import { Check, Copy, Link2, MoveRight, Unlink2 } from "lucide-react"
+import { Box, Check, CircleCheck, Component, Copy, Link, Link2, Unlink2 } from "lucide-react"
 
 export const metadata = { title: "Copy Button" }
 
@@ -29,29 +29,28 @@ import { Copy, Check } from 'lucide-react'
       ]}
       frameScale="160"
       previewChildren={
-        <div className="flex flex-col gap-4 text-[14px]">
-          <div className="flex items-center gap-4 font-sans font-[430]">
-            <span className="-translate-y-[1px] opacity-30">Copy Animation</span>
-            <MoveRight strokeWidth={1.25} className="mr-0.25 opacity-20" />
-            <AnimatedButton
-              className="size-4.5 cursor-pointer"
-              secondaryChildren={<Check />}
-              ariaLabel="Copy"
-            >
-              <Copy className="size-4" />
-            </AnimatedButton>
-          </div>
-          <div className="flex items-center gap-4 font-sans font-[430]">
-            <span className="-translate-y-[1px] opacity-30">Link animation</span>
-            <MoveRight strokeWidth={1.25} className="mr-0.25 opacity-20" />
-            <AnimatedButton
-              className="size-4.5 cursor-pointer"
-              secondaryChildren={<Unlink2 />}
-              ariaLabel="Copy"
-            >
-              <Link2 />
-            </AnimatedButton>
-          </div>
+        <div className="flex items-center gap-6">
+          <AnimatedButton
+            className="border-shadow cursor-pointer rounded-[8px] p-2"
+            secondaryChildren={<CircleCheck size={14} fill="#F6F7F7" />}
+            ariaLabel="Copy"
+          >
+            <Copy size={14} strokeWidth={2.15} />
+          </AnimatedButton>
+          <AnimatedButton
+            className="border-shadow cursor-pointer rounded-[8px] p-2"
+            secondaryChildren={<CircleCheck size={14} fill="#F6F7F7" />}
+            ariaLabel="Copy"
+          >
+            <Link size={14} />
+          </AnimatedButton>
+          <AnimatedButton
+            className="border-shadow cursor-pointer rounded-[8px] p-2"
+            secondaryChildren={<Box size={14} fill="#F6F7F7" />}
+            ariaLabel="Copy"
+          >
+            <Component size={14} />
+          </AnimatedButton>
         </div>
       }
     />

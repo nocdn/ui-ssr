@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ticker",
+  "title": "Ticker",
+  "description": "A status ticker that animates nicely when it's text is changed.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/ticker/ticker.tsx",
+      "content": "\"use client\"\n\nimport { AnimatePresence, motion } from \"motion/react\"\nimport { useEffect, useState } from \"react\"\n\nexport function Ticker({ text }: { text: string }) {\n  const [currentText, setCurrentText] = useState<string>(text)\n\n  useEffect(() => {\n    setCurrentText(text)\n  }, [text])\n\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: -10, filter: \"blur(1px)\" }}\n      animate={{ opacity: 1, y: 0, filter: \"blur(0px)\" }}\n      exit={{ opacity: 0, y: -10, filter: \"blur(1px)\" }}\n      className=\"font-jetbrains-mono mt-1 mb-3 flex items-center text-sm font-medium text-gray-500\"\n    >\n      <AnimatePresence mode=\"wait\">\n        <motion.span\n          key={currentText}\n          initial={{ opacity: 0, filter: \"blur(1px)\", y: -3 }}\n          animate={{ opacity: 1, filter: \"blur(0px)\", y: 0 }}\n          exit={{ opacity: 0, filter: \"blur(1px)\", y: 3 }}\n          transition={{ duration: 0.15, ease: \"easeInOut\" }}\n          className=\"ml-1.5 text-black dark:text-gray-200\"\n        >\n          {currentText}\n        </motion.span>\n      </AnimatePresence>\n    </motion.div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

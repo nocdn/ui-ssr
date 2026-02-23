@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "motion/react"
-import { cloneElement, isValidElement, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function AnimatedButton({
   children,
@@ -10,63 +10,64 @@ export function AnimatedButton({
   className,
   onClick,
   ariaLabel,
+  showingSecondary,
+  timeout = 1000,
 }: {
   children: React.ReactNode
   secondaryChildren?: React.ReactNode
   className?: string
   onClick?: () => void
   ariaLabel: string
+  showingSecondary?: boolean
+  timeout?: number
 }) {
   const [isShowingSecondary, setIsShowingSecondary] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const clonedChildren = isValidElement(children)
-    ? cloneElement(children, {
-        className: cn(className, (children.props as any).className),
-      } as any)
-    : children
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
-  const clonedSecondaryChildren =
-    secondaryChildren && isValidElement(secondaryChildren)
-      ? cloneElement(secondaryChildren, {
-          className: cn(className, (secondaryChildren.props as any).className),
-        } as any)
-      : secondaryChildren
+  const shouldShowSecondary = Boolean(secondaryChildren) && isShowingSecondary
 
   return (
     <motion.button
+      whileTap={{ scale: 0.95 }}
       tabIndex={0}
       aria-label={ariaLabel}
       className={cn("group flex shrink-0 cursor-pointer items-center justify-center", className)}
       onClick={() => {
-        if (!isShowingSecondary) {
-          setIsShowingSecondary(!isShowingSecondary)
-          onClick?.()
-          setTimeout(() => {
+        if (isShowingSecondary) return
+
+        onClick?.()
+
+        if (secondaryChildren) {
+          setIsShowingSecondary(true)
+          timeoutRef.current = setTimeout(() => {
             setIsShowingSecondary(false)
-          }, 1000)
+          }, timeout)
         }
       }}
     >
       <AnimatePresence mode="popLayout" initial={false}>
-        {isShowingSecondary ? (
-          <motion.div
-            key="secondary"
-            initial={{ opacity: 0, scale: 0.2, filter: "blur(2px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, scale: 0.2, filter: "blur(2px)" }}
-          >
-            {clonedSecondaryChildren}
-          </motion.div>
-        ) : (
-          <motion.div
-            key="primary"
-            initial={{ opacity: 0, scale: 0.2, filter: "blur(2px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, scale: 0.2, filter: "blur(2px)" }}
-          >
-            {clonedChildren}
-          </motion.div>
-        )}
+        <motion.div
+          key={shouldShowSecondary ? "secondary" : "primary"}
+          initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+          transition={{
+            type: "spring",
+            duration: 0.3,
+            bounce: 0,
+          }}
+          className="grid place-content-center"
+        >
+          {shouldShowSecondary ? secondaryChildren : children}
+        </motion.div>
       </AnimatePresence>
     </motion.button>
   )
