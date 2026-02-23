@@ -1,7 +1,7 @@
 "use client"
 
-import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const sections = [
   {
@@ -24,15 +24,11 @@ const sections = [
   },
   {
     title: "EXPERIMENTS",
-    links: [
-      { name: "Expanding Menu", href: "/experiments/expanding-menu" },
-    ],
+    links: [{ name: "Expanding Menu", href: "/experiments/expanding-menu" }],
   },
   {
     title: "RECREATIONS",
-    links: [
-      { name: "iPadOS Controls", href: "/recreations/traffic-lights" },
-    ],
+    links: [{ name: "iPadOS Controls", href: "/recreations/traffic-lights" }],
   },
   {
     title: "CONTACT",
@@ -47,11 +43,11 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="px-5 pt-5 overflow-y-auto bg-gray-50/35">
+    <div className="overflow-y-auto bg-gray-50/35 px-5 pt-5">
       <div className="flex flex-col gap-8">
         {sections.map((section) => (
           <div key={section.title} className="flex flex-col">
-            <h3 className="font-jetbrains-mono text-[12px] leading-6 text-gray-500 mb-2 tracking-widest font-medium">
+            <h3 className="font-jetbrains-mono mb-2 text-[12px] leading-6 font-medium tracking-widest text-gray-500">
               {section.title}
             </h3>
             <div className="flex flex-col gap-2 border-l border-gray-950/5">
@@ -62,10 +58,10 @@ export function Sidebar() {
                     key={link.href}
                     href={link.href}
                     prefetch={true}
-                    className={`text-left text-[14px] leading-6 font-inter pl-3 border-l transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+                    className={`font-inter border-l pl-3 text-left text-[14px] leading-6 transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
                       isActive
-                        ? "relative -ml-px font-[550] border-blue-800/90 text-blue-900/90"
-                        : "font-normal border-transparent text-gray-950/60"
+                        ? "relative -ml-px border-blue-800/90 font-[550] text-blue-900/90"
+                        : "border-transparent font-normal text-gray-950/60"
                     }`}
                   >
                     {link.name}

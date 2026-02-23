@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Ticker } from "@/registry/default/ui/ticker/ticker"
+import { useEffect, useState } from "react"
 
 const texts = [
   "Shawshank Redemption (1994)",
@@ -23,7 +23,7 @@ export function TickerPreview() {
   }, [])
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col items-center justify-center">
       <Ticker text={texts[currentIndex]} />
     </div>
   )

@@ -4,8 +4,8 @@ import { TerminalCodeBlock } from "./terminal-code-block"
 
 function PreviewSkeleton() {
   return (
-    <div className="rounded-lg max-w-3xl h-96 border border-gray-200 p-1 bg-gray-50/50 mb-3 animate-pulse">
-      <div className="rounded-[7px] w-full h-full border bg-gray-100 border-gray-200" />
+    <div className="mb-3 h-96 max-w-3xl animate-pulse rounded-lg border border-gray-200 bg-gray-50/50 p-1">
+      <div className="h-full w-full rounded-[7px] border border-gray-200 bg-gray-100" />
     </div>
   )
 }
@@ -29,21 +29,17 @@ export async function ComponentLayout({
       >
         {comingSoon ? "COMING SOON" : "COMPONENTS"}
       </p>
-      <p className="font-sans text-3xl leading-6 font-medium mt-3">
-        {componentName}
-      </p>
-      <p className="mt-6 font-sans text-[#737373] leading-7 font-[420]">
-        {description}
-      </p>
+      <p className="mt-3 font-sans text-3xl leading-6 font-medium">{componentName}</p>
+      <p className="mt-6 font-sans leading-7 font-[420] text-[#737373]">{description}</p>
       {!comingSoon && (
         <>
-          <div className="flex flex-col gap-4 mt-12">
+          <div className="mt-12 flex flex-col gap-4">
             <div className="flex items-center gap-4 font-sans text-[16px] font-medium">
               <p>Preview</p>
             </div>
             <Suspense fallback={<PreviewSkeleton />}>
-              <div className="rounded-lg max-w-3xl h-96 border border-gray-200 p-1 bg-gray-50/50 mb-3">
-                <div className="rounded-[7px] w-full h-full border bg-white border-gray-200 grid place-items-center">
+              <div className="mb-3 h-96 max-w-3xl rounded-lg border border-gray-200 bg-gray-50/50 p-1">
+                <div className="grid h-full w-full place-items-center rounded-[7px] border border-gray-200 bg-white">
                   <div
                     className="flex items-center gap-10"
                     style={{
@@ -56,36 +52,36 @@ export async function ComponentLayout({
               </div>
             </Suspense>
           </div>
-          <p className="mt-6 font-jetbrains-mono text-[12px] leading-6 tracking-widest text-gray-600 font-semibold">
+          <p className="font-jetbrains-mono mt-6 text-[12px] leading-6 font-semibold tracking-widest text-gray-600">
             INSTALLATION:
           </p>
           <TerminalCodeBlock code={installCode} className="mt-4" />
-          <p className="mt-6 font-jetbrains-mono text-[12px] leading-6 tracking-widest text-gray-600 font-semibold">
+          <p className="font-jetbrains-mono mt-6 text-[12px] leading-6 font-semibold tracking-widest text-gray-600">
             USAGE:
           </p>
           <Suspense
             fallback={
-              <div className="mt-4 h-32 rounded-lg border border-[#e5e5e5] bg-gray-50 animate-pulse" />
+              <div className="mt-4 h-32 animate-pulse rounded-lg border border-[#e5e5e5] bg-gray-50" />
             }
           >
             <CodeBlock code={usageCode} className="mt-4" />
           </Suspense>
           {apiReference && (
             <>
-              <p className="mt-6 font-jetbrains-mono text-[12px] leading-6 tracking-widest text-gray-600 font-semibold">
+              <p className="font-jetbrains-mono mt-6 text-[12px] leading-6 font-semibold tracking-widest text-gray-600">
                 PROPS:
               </p>
-              <div className="mt-4 border border-gray-200 rounded-lg overflow-hidden">
-                <table className="w-full font-ioskeley-mono">
-                  <thead className="bg-gray-100/40 border-b border-gray-200">
+              <div className="mt-4 overflow-hidden rounded-lg border border-gray-200">
+                <table className="font-ioskeley-mono w-full">
+                  <thead className="border-b border-gray-200 bg-gray-100/40">
                     <tr>
-                      <th className="text-left px-4 py-3 text-[14px] font-medium text-gray-950">
+                      <th className="px-4 py-3 text-left text-[14px] font-medium text-gray-950">
                         Prop
                       </th>
-                      <th className="text-left px-4 py-3 text-[14px] font-medium text-gray-950">
+                      <th className="px-4 py-3 text-left text-[14px] font-medium text-gray-950">
                         Type
                       </th>
-                      <th className="text-left px-4 py-3 text-[14px] font-medium text-gray-950">
+                      <th className="px-4 py-3 text-left text-[14px] font-medium text-gray-950">
                         Default
                       </th>
                     </tr>
@@ -95,20 +91,14 @@ export async function ComponentLayout({
                       <tr
                         key={item.prop}
                         className={
-                          index !== apiReference.length - 1
-                            ? "border-b border-gray-200"
-                            : ""
+                          index !== apiReference.length - 1 ? "border-b border-gray-200" : ""
                         }
                       >
-                        <td className="antialiased px-4 py-3 text-[14px] text-[#2B67EB]">
+                        <td className="px-4 py-3 text-[14px] text-[#2B67EB] antialiased">
                           {item.prop}
                         </td>
-                        <td className="antialiased px-4 py-3 text-[14px]">
-                          {item.type}
-                        </td>
-                        <td className="antialiased px-4 py-3 text-[14px]">
-                          {item.default}
-                        </td>
+                        <td className="px-4 py-3 text-[14px] antialiased">{item.type}</td>
+                        <td className="px-4 py-3 text-[14px] antialiased">{item.default}</td>
                       </tr>
                     ))}
                   </tbody>
