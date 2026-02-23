@@ -35,13 +35,12 @@ const ioskeleyMono = localFont({
   variable: "--font-ioskeley-mono",
 })
 
-const isDevelopment = process.env.NODE_ENV === "development"
-
-const baseTitle = "ui-ssr"
-
 export const metadata: Metadata = {
-  title: isDevelopment ? `${baseTitle} (dev)` : baseTitle,
-  description: "A simple, shadcn-compatible component library",
+  title: {
+    template: "%s — nocdn/ui",
+    default: "nocdn/ui",
+  },
+  description: "Uncommon, but simple shadcn components.",
 }
 
 export default function RootLayout({

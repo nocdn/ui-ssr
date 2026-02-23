@@ -7,14 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "latest",
     "clsx": "latest",
+    "lucide-react": "^0.575.0",
+    "motion": "^12.34.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "shiki": "^3.22.0",
     "tailwind-merge": "latest"
   },
   "devDependencies": {
@@ -27,6 +32,7 @@
     "prettier": "latest",
     "prettier-plugin-organize-imports": "latest",
     "prettier-plugin-tailwindcss": "latest",
+    "shadcn": "^3.8.5",
     "tailwindcss": "latest",
     "tailwindcss-motion": "latest",
     "tw-animate-css": "latest",

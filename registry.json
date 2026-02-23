@@ -1,0 +1,46 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "nocdn/ui",
+  "homepage": "https://bartoszbak.org",
+  "items": [
+    {
+      "name": "cornered-button",
+      "type": "registry:ui",
+      "title": "Cornered Button",
+      "description": "A button with darker cornered edges.",
+      "files": [
+        {
+          "path": "registry/default/ui/cornered-button/cornered-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["radix-ui"]
+    },
+    {
+      "name": "animated-button",
+      "type": "registry:ui",
+      "title": "Animated Button",
+      "description": "A button that smoothly transitions between its primary and secondary states.",
+      "files": [
+        {
+          "path": "registry/default/ui/animated-button/animated-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["motion"]
+    },
+    {
+      "name": "ticker",
+      "type": "registry:ui",
+      "title": "Ticker",
+      "description": "A status ticker that animates nicely when it's text is changed.",
+      "files": [
+        {
+          "path": "registry/default/ui/ticker/ticker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["motion"]
+    }
+  ]
+}
