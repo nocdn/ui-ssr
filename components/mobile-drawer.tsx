@@ -67,7 +67,7 @@ export function MobileDrawer() {
                         key={link.href}
                         href={link.href}
                         prefetch={true}
-                        className="font-inter pl-3 text-left text-[14px] leading-6 font-normal text-gray-950/60 dark:text-neutral-400"
+                        className="font-inter pl-3 text-left text-[14px] leading-6 font-[450] text-gray-700 dark:text-neutral-500"
                       >
                         {link.name}
                       </Link>

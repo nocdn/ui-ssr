@@ -71,7 +71,7 @@ export async function ComponentLayout({
               <p className="font-jetbrains-mono mt-6 text-[12px] leading-6 font-semibold tracking-widest text-gray-600 dark:text-neutral-500">
                 PROPS:
               </p>
-              <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 dark:border-white/10">
+              <div className="mt-4 overflow-x-auto overscroll-x-auto rounded-lg border border-gray-200 dark:border-white/10">
                 <table className="font-ioskeley-mono w-full">
                   <thead className="border-b border-gray-200 dark:border-white/10 bg-gray-100/40 dark:bg-white/5">
                     <tr>
