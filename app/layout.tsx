@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google"
@@ -50,11 +51,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetBrainsMono.variable} ${ioskeleyMono.variable} bg-background`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <div data-vaul-drawer-wrapper="" className="bg-background min-h-screen">
+            {children}
+          </div>
+        </ThemeProvider>
         <SpeedInsights />
       </body>
     </html>

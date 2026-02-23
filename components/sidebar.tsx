@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-const sections = [
+export const sections = [
   {
     title: "GETTING STARTED",
     links: [
@@ -43,14 +43,14 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="overflow-y-auto bg-gray-50/35 px-5 pt-5">
+    <div className="h-full overflow-y-auto bg-gray-50/35 dark:bg-neutral-900/60 px-5 pt-5">
       <div className="flex flex-col gap-8">
         {sections.map((section) => (
           <div key={section.title} className="flex flex-col">
-            <h3 className="font-jetbrains-mono mb-2 text-[12px] leading-6 font-medium tracking-widest text-gray-500">
+            <h3 className="font-jetbrains-mono mb-2 text-[12px] leading-6 font-medium tracking-widest text-gray-500 dark:text-neutral-500">
               {section.title}
             </h3>
-            <div className="flex flex-col gap-2 border-l border-gray-950/5">
+            <div className="flex flex-col gap-2 border-l border-gray-950/5 dark:border-white/8">
               {section.links.map((link) => {
                 const isActive = pathname === link.href
                 return (
@@ -58,10 +58,10 @@ export function Sidebar() {
                     key={link.href}
                     href={link.href}
                     prefetch={true}
-                    className={`font-inter border-l pl-3 text-left text-[14px] leading-6 transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+                    className={`font-inter pl-3 text-left text-[14px] leading-6 cursor-pointer transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
                       isActive
-                        ? "relative -ml-px border-blue-800/90 font-[550] text-blue-900/90"
-                        : "border-transparent font-normal text-gray-950/60"
+                        ? "relative -ml-px border-l border-blue-800/90 font-[550] text-blue-900/90 dark:border-blue-400/80 dark:text-blue-400"
+                        : "font-normal text-gray-950/60 dark:text-neutral-400"
                     }`}
                   >
                     {link.name}

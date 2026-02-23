@@ -9,6 +9,7 @@ async function highlightCode(code: any, language: any) {
   return codeToHtml(code, {
     lang: language,
     themes: { light: "github-light", dark: "github-dark" },
+    defaultColor: false,
   })
 }
 
@@ -16,16 +17,16 @@ export async function CodeBlock({ code, language = "tsx", filename, className }:
   const html = await highlightCode(code, language)
 
   return (
-    <div className={cn("relative overflow-hidden rounded-lg border border-[#e5e5e5]", className)}>
-      <div className="flex items-center justify-between border-b border-[#e5e5e5] bg-[#FAFBFB] py-2.5 pr-4 pl-3">
+    <div className={cn("relative overflow-hidden rounded-lg border border-[#e5e5e5] dark:border-white/10", className)}>
+      <div className="flex items-center justify-between border-b border-[#e5e5e5] bg-[#FAFBFB] dark:border-white/10 dark:bg-white/5 py-2.5 pr-4 pl-3">
         <div className="flex items-center gap-2">
           {filename && (
-            <span className="font-ioskeley-mono text-xs font-medium text-[#71717a]">
+            <span className="font-ioskeley-mono text-xs font-medium text-[#71717a] dark:text-neutral-400">
               {filename}
             </span>
           )}
           {language && (
-            <span className="font-ioskeley-mono rounded-sm bg-[#e5e5e5] px-2 py-1 text-xs text-[#52525b]">
+            <span className="font-ioskeley-mono rounded-sm bg-[#e5e5e5] px-2 py-1 text-xs text-[#52525b] dark:bg-white/10 dark:text-neutral-400">
               {language}
             </span>
           )}

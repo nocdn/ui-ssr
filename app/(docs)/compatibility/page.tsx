@@ -15,14 +15,14 @@ export default function CompatibilityPage() {
         The code also assumes that you are using the <span className="code-inline">@ → src</span>{" "}
         alias for the bundler.
       </p>
-      <p className="font-jetbrains-mono text-[12px] leading-6 font-semibold tracking-widest text-gray-600">
+      <p className="font-jetbrains-mono text-[12px] leading-6 font-semibold tracking-widest text-gray-600 dark:text-neutral-500">
         SSR AND ANIMATIONS
       </p>
       <p>
         Motion works server-side, but initial mount transitions can flash; if needed, disable
         initial animations on first paint or gate with hydration checks.
       </p>
-      <p className="font-jetbrains-mono text-[12px] leading-6 font-semibold tracking-widest text-gray-600">
+      <p className="font-jetbrains-mono text-[12px] leading-6 font-semibold tracking-widest text-gray-600 dark:text-neutral-500">
         TROUBLESHOOTING
       </p>
       <div>

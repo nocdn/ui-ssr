@@ -13,7 +13,7 @@ export default function InstallationPage() {
           href="https://ui.shadcn.com/docs/installation"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium text-blue-700"
+          className="font-medium text-blue-700 dark:text-blue-400"
         >
           documentation page
         </a>{" "}
@@ -27,7 +27,7 @@ export default function InstallationPage() {
       <p>
         This will install the cornered button component, which you can check out in more detail
         here:{" "}
-        <a href="/components/cornered-button" className="cursor-pointer font-medium text-blue-700">
+        <a href="/components/cornered-button" className="cursor-pointer font-medium text-blue-700 dark:text-blue-400">
           cornered button
         </a>
         .

@@ -1,3 +1,4 @@
+import { OpenDrawerButton } from "@/components/open-drawer-button"
 import { PageLayout } from "@/components/page-layout"
 import Link from "next/link"
 
@@ -19,11 +20,12 @@ export default function IntroductionPage() {
         Feel free to look around, use them in your own projects, and contribute to the library if
         you&apos;d like. You can find a list of the components in the sidebar, but if you are not
         familiar with UI libraries, I recommend reading the{" "}
-        <Link href="/installation" prefetch={true} className="font-medium text-blue-700">
+        <Link href="/installation" prefetch={true} className="font-medium text-blue-700 dark:text-blue-400">
           installation guide
         </Link>
         .
       </p>
+      <OpenDrawerButton />
     </PageLayout>
   )
 }

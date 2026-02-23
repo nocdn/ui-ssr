@@ -7,7 +7,7 @@ export default function TickerPage() {
   return (
     <ComponentLayout
       componentName="Animated Ticker"
-      description="A status ticker that animates nicely when changed."
+      description="A status ticker that animates nicely when the text prop changes."
       installCode="bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/ticker.json"
       usageCode={`import { Ticker } from '@/components/ui/ticker'
 
