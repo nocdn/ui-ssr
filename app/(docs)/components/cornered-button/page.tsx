@@ -21,7 +21,6 @@ export default function CorneredButtonPage() {
   NEXT
 </CorneredButton>`}
       apiReference={[
-        { prop: "asChild", type: "boolean", default: "false" },
         { prop: "size", type: '"sm" | "md" | "lg"', default: '"md"' },
         {
           prop: "variant",
@@ -39,6 +38,7 @@ export default function CorneredButtonPage() {
         },
         { prop: "className", type: "string", default: "-" },
         { prop: "style", type: "React.CSSProperties", default: "-" },
+        { prop: "ref", type: "React.Ref<HTMLButtonElement>", default: "-" },
         { prop: "children", type: "React.ReactNode", default: "-" },
       ]}
       previewChildren={

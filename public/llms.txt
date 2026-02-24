@@ -1,0 +1,41 @@
+# nocdn/ui
+
+> Uncommon but simple shadcn/ui components with practical docs, install commands, and API references.
+
+nocdn/ui is a docs-first component library. The documentation is organized for quick lookup by humans and language models, with focused pages for installation, compatibility, components, experiments, and recreations.
+
+## Docs
+
+- [Introduction](https://ui.bartoszbak.org/introduction): Library goals, scope, and where to start.
+- [Installation](https://ui.bartoszbak.org/installation): How to install components via the shadcn registry.
+- [Compatibility](https://ui.bartoszbak.org/compatibility): Supported React, TypeScript, and Tailwind versions plus troubleshooting.
+
+## Components
+
+- [Cornered Button](https://ui.bartoszbak.org/components/cornered-button): Button with corner accents, install command, usage example, and API table.
+- [Animated Ticker](https://ui.bartoszbak.org/components/ticker): Animated status ticker with install command, usage example, and API table.
+- [Animated Button](https://ui.bartoszbak.org/components/animated-button): Animated button pattern with primary and secondary states.
+- [Corner Banner](https://ui.bartoszbak.org/components/corner-banner): Planned component page.
+- [Reasoning Traces](https://ui.bartoszbak.org/components/reasoning-traces): Planned component page.
+
+## Experiments
+
+- [Expanding Menu](https://ui.bartoszbak.org/experiments/expanding-menu): Planned experiment page.
+
+## Recreations
+
+- [iPadOS Controls](https://ui.bartoszbak.org/recreations/traffic-lights): Recreation of iPadOS traffic light window controls.
+
+## Contact
+
+- [Get in touch](https://ui.bartoszbak.org/get-in-touch): Contact entry point.
+- [Contributing](https://ui.bartoszbak.org/contributing): Contribution guidance.
+
+## Optional
+
+- [Full LLM context](https://ui.bartoszbak.org/llms-full.txt): Expanded single-file context.
+- [Registry index](https://ui.bartoszbak.org/r/registry.json): shadcn registry manifest.
+- [Cornered Button registry item](https://ui.bartoszbak.org/r/cornered-button.json): Installable component payload.
+- [Ticker registry item](https://ui.bartoszbak.org/r/ticker.json): Installable component payload.
+- [Animated Button registry item](https://ui.bartoszbak.org/r/animated-button.json): Installable component payload.
+- [Source repository](https://github.com/nocdn/ui-ssr): Project source code and issue tracking.

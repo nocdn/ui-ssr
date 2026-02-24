@@ -1,0 +1,176 @@
+# nocdn/ui
+
+> Expanded context file for nocdn/ui docs and registry components.
+
+This file aggregates the key documentation context published at https://ui.bartoszbak.org.
+If this project is deployed on a different domain, replace links accordingly.
+
+## Project Snapshot
+
+- Project: nocdn/ui
+- Purpose: Small, reusable shadcn-style UI components with practical docs.
+- Stack: Next.js App Router, React, TypeScript, Tailwind CSS.
+- Distribution: shadcn registry JSON endpoints under `/r`.
+- Main docs entry: `/introduction`
+- Root path behavior: `/` redirects to `/introduction`.
+
+## Route Index
+
+- [Introduction](https://ui.bartoszbak.org/introduction): Library overview and onboarding.
+- [Installation](https://ui.bartoszbak.org/installation): How to install via shadcn.
+- [Compatibility](https://ui.bartoszbak.org/compatibility): Supported versions and troubleshooting.
+- [Cornered Button](https://ui.bartoszbak.org/components/cornered-button): Component docs and API.
+- [Animated Ticker](https://ui.bartoszbak.org/components/ticker): Component docs and API.
+- [Animated Button](https://ui.bartoszbak.org/components/animated-button): Animated button pattern docs and API.
+- [Corner Banner](https://ui.bartoszbak.org/components/corner-banner): Planned page.
+- [Reasoning Traces](https://ui.bartoszbak.org/components/reasoning-traces): Planned page.
+- [Expanding Menu](https://ui.bartoszbak.org/experiments/expanding-menu): Planned page.
+- [iPadOS Controls](https://ui.bartoszbak.org/recreations/traffic-lights): Recreation demo page.
+- [Get in touch](https://ui.bartoszbak.org/get-in-touch): Contact page.
+- [Contributing](https://ui.bartoszbak.org/contributing): Contribution page.
+
+## Documentation Content
+
+### Introduction (`/introduction`)
+
+The introduction explains that nocdn/ui focuses on simple but uncommon components that are not usually included in mainstream UI kits. It invites users to browse components, use them in their own projects, and contribute improvements.
+
+### Installation (`/installation`)
+
+The installation guide explains that components are distributed through a shadcn registry and that shadcn should be configured first.
+
+Primary install pattern:
+
+`bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/cornered-button.json`
+
+The page links users to the cornered button docs after installation.
+
+### Compatibility (`/compatibility`)
+
+Published compatibility targets:
+
+- React 19+
+- TypeScript 5.3+
+- Tailwind CSS 4.x
+
+Additional notes:
+
+- Code assumes an `@ -> src` alias.
+- Motion can run server-side, but initial mount animation flash may require hydration gating or disabled initial animations.
+- Troubleshooting covers alias resolution and missing type setup.
+
+### Cornered Button (`/components/cornered-button`)
+
+Summary:
+
+- Button component with border and configurable corner accents.
+- Designed to follow shadcn conventions and accessibility expectations.
+
+Install command:
+
+`bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/cornered-button.json`
+
+Usage import:
+
+`import { CorneredButton } from '@/components/ui/cornered-button'`
+
+API surface documented on the page:
+
+- `size?: "sm" | "md" | "lg"`
+- `variant?: "default" | "outline" | "ghost" | "destructive"`
+- `corners?: "on" | "off"`
+- `borderWidth?: number`
+- `cornerSize?: number`
+- `cornerColor?: string`
+- `type?: "button" | "submit" | "reset"`
+- `className?: string`
+- `style?: React.CSSProperties`
+- `ref?: React.Ref<HTMLButtonElement>`
+- `children?: React.ReactNode`
+
+### Animated Ticker (`/components/ticker`)
+
+Summary:
+
+- Animated status ticker for changing text values.
+
+Install command:
+
+`bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/ticker.json`
+
+Usage import:
+
+`import { Ticker } from '@/components/ui/ticker'`
+
+Documented props:
+
+- `className?: string`
+- `text: string`
+
+### Animated Button (`/components/animated-button`)
+
+Summary:
+
+- Uses `AnimatedButton` to transition between primary and secondary visual states.
+- Intended for actions such as copy and quick status confirmation.
+
+Install command:
+
+`bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/animated-button.json`
+
+Usage import:
+
+`import { AnimatedButton } from '@/components/ui/animated-button'`
+
+Documented props:
+
+- `className?: string`
+- `children: React.ReactNode`
+- `secondaryChildren?: React.ReactNode`
+- `onClick?: () => void`
+- `ariaLabel: string`
+- `showingSecondary?: boolean`
+- `timeout?: number`
+
+### Corner Banner (`/components/corner-banner`)
+
+Status: Coming soon.
+
+Intended description: a corner-anchored banner component with accessibility considerations.
+
+### Reasoning Traces (`/components/reasoning-traces`)
+
+Status: Coming soon.
+
+Intended description: a component for displaying model reasoning traces.
+
+### Expanding Menu (`/experiments/expanding-menu`)
+
+Status: Coming soon.
+
+### iPadOS Controls (`/recreations/traffic-lights`)
+
+Summary:
+
+- Recreation of iPadOS-style traffic light window controls.
+- Page includes an interactive demo component.
+
+### Get in touch (`/get-in-touch`)
+
+Summary: contact page for questions and reach-outs.
+
+### Contributing (`/contributing`)
+
+Summary: contributions are welcome via issues or pull requests.
+
+## Registry Endpoints
+
+- [Registry index](https://ui.bartoszbak.org/r/registry.json): Lists published registry items.
+- [Cornered Button registry item](https://ui.bartoszbak.org/r/cornered-button.json): Includes component source payload.
+- [Ticker registry item](https://ui.bartoszbak.org/r/ticker.json): Includes component source payload.
+- [Animated Button registry item](https://ui.bartoszbak.org/r/animated-button.json): Includes component source payload.
+
+## Optional
+
+- [Compact LLM index](https://ui.bartoszbak.org/llms.txt): Smaller curated navigation file.
+- [Source repository](https://github.com/nocdn/ui-ssr): Full project source.

@@ -7,7 +7,7 @@ export default function CompatibilityPage() {
     <PageLayout category="COMPATIBILITY" title="Compatibility">
       <p>The components are compatible with the following technologies:</p>
       <ul>
-        <li>React 18+</li>
+        <li>React 19+</li>
         <li>TypeScript 5.3+</li>
         <li>Tailwind CSS 4.x</li>
       </ul>

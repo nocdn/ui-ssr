@@ -13,8 +13,7 @@
           "path": "registry/default/ui/cornered-button/cornered-button.tsx",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["radix-ui"]
+      ]
     },
     {
       "name": "animated-button",

@@ -17,7 +17,7 @@ export const sections = [
     links: [
       { name: "Cornered Button", href: "/components/cornered-button" },
       { name: "Animated Ticker", href: "/components/ticker" },
-      { name: "Copy Button", href: "/components/copy-button" },
+      { name: "Animated Button", href: "/components/animated-button" },
       { name: "Corner Banner", href: "/components/corner-banner" },
       { name: "Reasoning Traces", href: "/components/reasoning-traces" },
     ],
@@ -43,7 +43,7 @@ export function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="h-full overflow-y-auto bg-gray-50/35 dark:bg-neutral-900/60 px-5 pt-5">
+    <div className="h-full overflow-y-auto bg-gray-50/35 px-5 pt-5 dark:bg-neutral-900/60">
       <div className="flex flex-col gap-8">
         {sections.map((section) => (
           <div key={section.title} className="flex flex-col">
@@ -58,7 +58,7 @@ export function Sidebar() {
                     key={link.href}
                     href={link.href}
                     prefetch={true}
-                    className={`font-inter pl-3 text-left text-[14px] leading-6 cursor-pointer transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+                    className={`font-inter cursor-pointer pl-3 text-left text-[14px] leading-6 transition-[font-weight] duration-200 ease-[cubic-bezier(0.19,1,0.22,1)] ${
                       isActive
                         ? "relative -ml-px border-l border-blue-800/90 font-[550] text-blue-900/90 dark:border-blue-400/80 dark:text-blue-400"
                         : "font-normal text-gray-950/60 dark:text-neutral-400"
